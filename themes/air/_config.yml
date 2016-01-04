@@ -1,41 +1,37 @@
 menu:
-  首页: /
-  TraceInvest: http://traceinvest.com
-  随感: /categories/essay/
-  技术: /categories/tech/
-  理财: /categories/investment/
-  生活: /categories/life/
-  归档: /archives
+  Home: /
+#  カテゴリーへのリンク: /categories/essay/
+  Archives: /archives
 
 widgets:
 - search
 - tag
-- traceInvest
+- twitter
 - recent_posts
 
 excerpt_link: Read More
 
 twitter:
-  username:
+  username: myokoo21
   show_replies: false
   tweet_count: 5
 
 addthis:
   enable: true
-  pubid:
-  weibo: true
-  linkedin: true
-  google: false
-  facebook: true
-  twitter: true
+  pubid: ra-568a5f688410a7bb
+#  weibo: false
+#  linkedin: false
+#  google: true
+#  facebook: true
+#  twitter: true
 
 copyright:
   enable: true
-  claim: 版权声明：自由转载-非商用-无演绎-保持署名 @ Creative Commons BY-NC-ND 3.0
-  show_link: true
+  claim: (C) 2015 MizukiYokoo.
+  show_link: false
 
 fancybox: true
 
-google_analytics: UA-45019001-1
-analytics_site_name: topdna.org
+google_analytics: UA-71964299-1
+analytics_site_name: myokoo.github.io
 rss:
