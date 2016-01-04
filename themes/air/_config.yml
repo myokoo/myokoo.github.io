@@ -2,6 +2,9 @@ menu:
   Home: /
 #  カテゴリーへのリンク: /categories/essay/
   Archives: /archives
+  RSS: /rss2.xml
+
+rss: /rss2.xml
 
 widgets:
 - search
@@ -26,8 +29,9 @@ addthis:
 #  twitter: true
 
 copyright:
-  enable: true
-  claim: (C) 2015 MizukiYokoo.
+  enable: false
+  claim: false
+  claim: 
   show_link: false
 
 fancybox: true
