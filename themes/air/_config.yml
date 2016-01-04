@@ -6,7 +6,7 @@ menu:
 widgets:
 - search
 - tag
-- twitter
+#- twitter
 - recent_posts
 
 excerpt_link: Read More
