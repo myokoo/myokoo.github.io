@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title><![CDATA[せせらぎ]]></title>
+    <link>http://myokoo.github.io/</link>
+    <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
+    <description><![CDATA[こころの平穏を取り戻すために頑張る為の技術的？な事を書く予定・・・]]></description>
+    <pubDate>Mon, 04 Jan 2016 15:15:06 GMT</pubDate>
+    <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title><![CDATA[はじめの記事]]></title>
+      <link>http://myokoo.github.io/2016/01/05/2016-01-05-first/</link>
+      <guid>http://myokoo.github.io/2016/01/05/2016-01-05-first/</guid>
+      <pubDate>Mon, 04 Jan 2016 15:09:40 GMT</pubDate>
+      <description>
+      <![CDATA[<p>書きたいことは、未だ試したりできていなのだけど、<br>書きたい時にサイトが無いと直ぐに無気力状態になるので、サイトを作るだけ作りました。</p>
+<p>何時情報を更新できるやら。のんびりやって見ます。</p>
+]]>
+      </description>
+      <content:encoded><![CDATA[<p>書きたいことは、未だ試したりできていなのだけど、<br>書きたい時にサイトが無いと直ぐに無気力状態になるので、サイトを作るだけ作りました。</p>
+<p>何時情報を更新できるやら。のんびりやって見ます。</p>
+]]></content:encoded>
+      <comments>http://myokoo.github.io/2016/01/05/2016-01-05-first/#disqus_thread</comments>
+    </item>
+    
+  </channel>
+</rss>
