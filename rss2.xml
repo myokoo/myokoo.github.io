@@ -7,7 +7,7 @@
     <link>http://myokoo.github.io/</link>
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     <description><![CDATA[こころの平穏を取り戻すために頑張る為の技術的？な事を書く予定・・・]]></description>
-    <pubDate>Tue, 26 Jan 2016 17:24:22 GMT</pubDate>
+    <pubDate>Tue, 26 Jan 2016 17:27:56 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -29,7 +29,7 @@
 <p>下記の用な感じで <code>%lists</code> が想定しているデータ構造の「hashの配列のhash」になります。<br> <figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">my</span> <span class="variable">%lists</span>;</span><br><span class="line"><span class="keyword">for</span> <span class="keyword">my</span> <span class="variable">$data</span> (<span class="variable">@log_data</span>) &#123;</span><br><span class="line">    <span class="keyword">my</span> ( <span class="variable">$day</span>, <span class="variable">$time</span>, <span class="variable">$account</span>, <span class="variable">$from</span>, <span class="variable">$to</span>, <span class="variable">$ip</span> ) = <span class="keyword">split</span>(<span class="regexp">/ /</span>, <span class="variable">$data</span>);</span><br><span class="line">    <span class="keyword">my</span> <span class="variable">%hash</span> = (<span class="string">day =&gt;</span> <span class="variable">$day</span>, <span class="string">time =&gt;</span> <span class="variable">$time</span>, <span class="string">from =&gt;</span> <span class="variable">$from</span>, <span class="string">to =&gt;</span> <span class="variable">$to</span>, <span class="string">src_ip =&gt;</span> <span class="variable">$ip</span>);</span><br><span class="line">    <span class="keyword">push</span>( @&#123;<span class="variable">$lists</span>&#123;<span class="variable">$account</span>&#125;&#125;, \<span class="variable">%hash</span> );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li>2行目で配列を1行ずつループさせる</li>
-<li>3行目でデータを半角区切りで変数に格納</li>
+<li>3行目でデータを半角スペース区切りで変数に格納</li>
 <li><p>4行目で一番深い部分のhashを作成</p>
 <p>  5行目でpushされるのはあくまで <code>%hash</code> のリファレンスとなるため、4行目の <code>%hash</code> を loop外(1行目の下とか)で宣言してしまうと、<code>@{lists{$account}}</code> の配列内に格納されるデータは全て同じ <code>%hash</code> (のデータ)を参照してしまいます。※説明が間違ってたらすいません。<br>その辺に関しては <a href="http://perldoc.jp/docs/perl/5.20.1/perldsc.pod" target="_blank" rel="external">http://perldoc.jp/docs/perl/5.20.1/perldsc.pod</a> に詳しく説明が載っています。</p>
 </li>
