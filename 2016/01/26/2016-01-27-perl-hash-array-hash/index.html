@@ -1,26 +1,93 @@
-<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"
-  xmlns:atom="http://www.w3.org/2005/Atom"
-  xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title><![CDATA[せせらぎ]]></title>
-    <link>http://myokoo.github.io/</link>
-    <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
-    <description><![CDATA[こころの平穏を取り戻すために頑張る為の技術的？な事を書く予定・・・]]></description>
-    <pubDate>Tue, 26 Jan 2016 17:24:22 GMT</pubDate>
-    <generator>http://hexo.io/</generator>
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>perlで「hashの配列のhash」にアクセスする方法 | せせらぎ</title>
+  <meta name="author" content="Mizuki Yokoo">
+  
+  <meta name="description" content="こころの平穏を取り戻すために頑張る為の技術的？な事を書く予定・・・">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="perlで「hashの配列のhash」にアクセスする方法"/>
+  <meta property="og:site_name" content="せせらぎ"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="せせらぎ" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="/js/jquery.min.js"></script>
+  
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71964299-1', 'myokoo.github.io');
+  ga('send', 'pageview');
+
+</script>
+
+
+</head>
+
+
+<body>
+  <!--[if lte IE 8]> <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'> <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0027_Simplified Chinese.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." style='margin-left:auto;margin-right:auto;display: block;'/></a></div> <![endif]-->
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">せせらぎ</a></h1>
+  <h2><a href="/">頑張れ俺</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
     
-    <item>
-      <title><![CDATA[perlで「hashの配列のhash」にアクセスする方法]]></title>
-      <link>http://myokoo.github.io/2016/01/26/2016-01-27-perl-hash-array-hash/</link>
-      <guid>http://myokoo.github.io/2016/01/26/2016-01-27-perl-hash-array-hash/</guid>
-      <pubDate>Tue, 26 Jan 2016 13:27:17 GMT</pubDate>
-      <description>
-      <![CDATA[<p>perlで「配列のhash」や「hashの配列」を扱う方法について詳しく載っているサイトは多いけど、「hashの配列hash」とか1階層深いものへのアクセス方法とかが載っているサイトが見つからなかったので備考禄的な目的で残しておきます。<br>(色々書き方はあると思うのであくまで今回やった方法を載せます)</p>
-<h2 id="u3084_u308A_u305F_u304B_u3063_u305F_u3053_u3068"><a href="#u3084_u308A_u305F_u304B_u3063_u305F_u3053_u3068" class="headerlink" title="やりたかったこと"></a>やりたかったこと</h2><p>複数のアカウントが行っている処理のログを元にアカウント別でデータをグループ化して、アカウント別でゴニョゴニョしたかった。<br>正確には、引っ張ってきたデータを元に別のログとの突き合わせをして要素追加したりしたけど掲題とは関係のでバッサリカット。。。</p>]]>
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+      <li><a href="/rss2.xml">RSS</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
       
-      </description>
-      <content:encoded><![CDATA[<p>perlで「配列のhash」や「hashの配列」を扱う方法について詳しく載っているサイトは多いけど、「hashの配列hash」とか1階層深いものへのアクセス方法とかが載っているサイトが見つからなかったので備考禄的な目的で残しておきます。<br>(色々書き方はあると思うのであくまで今回やった方法を載せます)</p>
+        <time datetime="2016-01-26T13:27:17.000Z"><a href="/2016/01/26/2016-01-27-perl-hash-array-hash/">2016-01-26</a></time>
+      
+      
+  
+    <h1 class="title">perlで「hashの配列のhash」にアクセスする方法</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>perlで「配列のhash」や「hashの配列」を扱う方法について詳しく載っているサイトは多いけど、「hashの配列hash」とか1階層深いものへのアクセス方法とかが載っているサイトが見つからなかったので備考禄的な目的で残しておきます。<br>(色々書き方はあると思うのであくまで今回やった方法を載せます)</p>
 <h2 id="u3084_u308A_u305F_u304B_u3063_u305F_u3053_u3068"><a href="#u3084_u308A_u305F_u304B_u3063_u305F_u3053_u3068" class="headerlink" title="やりたかったこと"></a>やりたかったこと</h2><p>複数のアカウントが行っている処理のログを元にアカウント別でデータをグループ化して、アカウント別でゴニョゴニョしたかった。<br>正確には、引っ張ってきたデータを元に別のログとの突き合わせをして要素追加したりしたけど掲題とは関係のでバッサリカット。。。</p>
 <a id="more"></a>
 <h2 id="u300Chash_u306E_u914D_u5217_u306Ehash_u300D_u306E_u60F3_u5B9A_u30C7_u30FC_u30BF_u69CB_u9020"><a href="#u300Chash_u306E_u914D_u5217_u306Ehash_u300D_u306E_u60F3_u5B9A_u30C7_u30FC_u30BF_u69CB_u9020" class="headerlink" title="「hashの配列のhash」の想定データ構造"></a>「hashの配列のhash」の想定データ構造</h2><p>下記のような構造をもつhashを想定</p>
@@ -49,25 +116,96 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">account: account_ccc</span><br><span class="line">  day: <span class="number">2016</span>-<span class="number">01</span>-<span class="number">01</span>, time: <span class="number">00</span>:<span class="number">00</span>:<span class="number">33</span>, from: sef@bal.com, to: aaea@aol.com, ip: <span class="number">210.221</span>.<span class="number">44.111</span></span><br><span class="line">  day: <span class="number">2016</span>-<span class="number">01</span>-<span class="number">01</span>, time: <span class="number">01</span>:<span class="number">00</span>:<span class="number">00</span>, from: sef@bal.com, to: aaas@aol.com, ip: <span class="number">210.221</span>.<span class="number">44.111</span></span><br><span class="line">  day: <span class="number">2016</span>-<span class="number">01</span>-<span class="number">01</span>, time: <span class="number">02</span>:<span class="number">00</span>:<span class="number">00</span>, from: sef@bal.com, to: aava@aol.com, ip: <span class="number">210.221</span>.<span class="number">44.111</span></span><br><span class="line">  day: <span class="number">2016</span>-<span class="number">01</span>-<span class="number">01</span>, time: <span class="number">02</span>:<span class="number">31</span>:<span class="number">00</span>, from: info@hhh.com, to: abc@eeee.com, ip: <span class="number">196.28</span>.<span class="number">101.87</span></span><br><span class="line">account: account_aaa</span><br><span class="line">  day: <span class="number">2016</span>-<span class="number">01</span>-<span class="number">01</span>, time: <span class="number">00</span>:<span class="number">00</span>:<span class="number">00</span>, from: xyp@aaaa.com, to: bbb@bbbb.com, ip: <span class="number">210.188</span>.<span class="number">22.21</span></span><br><span class="line">  day: <span class="number">2016</span>-<span class="number">01</span>-<span class="number">01</span>, time: <span class="number">00</span>:<span class="number">01</span>:<span class="number">00</span>, from: bji@aaaa.com, to: aaa@cccc.com, ip: <span class="number">210.18</span>.<span class="number">213.133</span></span><br><span class="line">  day: <span class="number">2016</span>-<span class="number">01</span>-<span class="number">01</span>, time: <span class="number">00</span>:<span class="number">02</span>:<span class="number">00</span>, from: zzb@cccc.com, to: aaa@dddd.com, ip: <span class="number">111.42</span>.<span class="number">22.12</span></span><br><span class="line">account: account_bbb</span><br><span class="line">  day: <span class="number">2016</span>-<span class="number">01</span>-<span class="number">01</span>, time: <span class="number">00</span>:<span class="number">01</span>:<span class="number">00</span>, from: aaa@hoge.com, to: kru@hoge.com, ip: <span class="number">221.16</span>.<span class="number">130.13</span></span><br><span class="line">  day: <span class="number">2016</span>-<span class="number">01</span>-<span class="number">01</span>, time: <span class="number">00</span>:<span class="number">01</span>:<span class="number">00</span>, from: aaa@hoge.com, to: swu@hoge.com, ip: <span class="number">221.16</span>.<span class="number">130.13</span></span><br></pre></td></tr></table></figure>
 <p><code>for my $hash_key (keys %lists){</code> を <code>for my $hash_key (sort keys %lists){</code> にすればアカウントの文字列順で並べてくれます。</p>
 <p>書いていると何に詰まったんだっけ・・・と思うも、そうなるのは俄ゆえんか。精進せねば。</p>
-]]></content:encoded>
-      <comments>http://myokoo.github.io/2016/01/26/2016-01-27-perl-hash-array-hash/#disqus_thread</comments>
-    </item>
+
+      
+    </div>
+    <footer>
+      
+
+        
+        
+          <div class="alignright post-nav">
+            <em>次へ: </em><a href="/2016/01/05/2016-01-05-first/">はじめの記事</a>
+          </div>
+          <div class="clearfix"></div>
+        
+
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/perl/">perl</a>
+  </div>
+
+        
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-568a5f688410a7bb"></script>
+  <div class="addthis_sharing_toolbox">
+
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="text" name="q" results="0" placeholder="Search">
+    <i class="icon-search"></i>
+    <input type="hidden" name="q" value="site:myokoo.github.io">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">Tags</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/perl/">perl</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">最新記事</h3>
+  <ul class="entry">
     
-    <item>
-      <title><![CDATA[はじめの記事]]></title>
-      <link>http://myokoo.github.io/2016/01/05/2016-01-05-first/</link>
-      <guid>http://myokoo.github.io/2016/01/05/2016-01-05-first/</guid>
-      <pubDate>Mon, 04 Jan 2016 15:09:40 GMT</pubDate>
-      <description>
-      <![CDATA[<p>書きたいことは、未だ試したりできていなのだけど、<br>書きたい時にサイトが無いと直ぐに無気力状態になるので、サイトを作るだけ作りました。</p>
-<p>何時情報を更新できるやら。のんびりやって見ます。</p>
-]]>
-      </description>
-      <content:encoded><![CDATA[<p>書きたいことは、未だ試したりできていなのだけど、<br>書きたい時にサイトが無いと直ぐに無気力状態になるので、サイトを作るだけ作りました。</p>
-<p>何時情報を更新できるやら。のんびりやって見ます。</p>
-]]></content:encoded>
-      <comments>http://myokoo.github.io/2016/01/05/2016-01-05-first/#disqus_thread</comments>
-    </item>
+      <li>
+        <a href="/2016/01/26/2016-01-27-perl-hash-array-hash/">perlで「hashの配列のhash」にアクセスする方法</a>
+      </li>
     
-  </channel>
-</rss>
+      <li>
+        <a href="/2016/01/05/2016-01-05-first/">はじめの記事</a>
+      </li>
+    
+  </ul>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <div id="go-pg-top"><i class="icon-arrow-up"></i></div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2016 Mizuki Yokoo
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript" charset="utf-8" src="/js/page.js"></script>
+
+</body>
+
+</html>
